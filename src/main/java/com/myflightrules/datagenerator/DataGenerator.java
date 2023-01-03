@@ -101,6 +101,6 @@ public class DataGenerator {
             rValue = rValue.concat(it.next() + " ");
         }
 
-        return "\"" + rValue.trim() + "\", \"" + callType + "\"";
+        return "\"" + rValue.trim() + "\", " + callType;
     }
 }

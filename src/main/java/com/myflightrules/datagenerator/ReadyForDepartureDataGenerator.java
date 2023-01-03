@@ -1,7 +1,6 @@
 package com.myflightrules.datagenerator;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ReadyForDepartureDataGenerator extends DataGenerator {
 
