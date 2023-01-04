@@ -78,7 +78,7 @@ public class StartupDataGenerator extends DataGenerator {
                 break;
         }
 
-        return formatForCsv(rValueBits, "REQUEST_STARTUP");
+        return formatForCsv(rValueBits, "REQUEST_STARTUP", LabelConstants.REQUEST_STARTUP);
     }
 
     private String randomLocation() {

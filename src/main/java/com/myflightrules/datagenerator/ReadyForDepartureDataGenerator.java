@@ -80,7 +80,7 @@ public class ReadyForDepartureDataGenerator extends DataGenerator {
 
         }
 
-        return formatForCsv(rValueBits, "READY_FOR_DEPARTURE");
+        return formatForCsv(rValueBits, "READY_FOR_DEPARTURE", LabelConstants.READY_FOR_DEPARTURE);
     }
 
     

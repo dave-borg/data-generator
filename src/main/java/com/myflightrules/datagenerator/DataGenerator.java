@@ -93,7 +93,7 @@ public class DataGenerator {
         return randomListItem(greetings);
     }
 
-    protected String formatForCsv(ArrayList<String> rValueBits, String callType) {
+    protected String formatForCsv(ArrayList<String> rValueBits, String callType, int labelId) {
         String rValue = "";
         Iterator it = rValueBits.iterator();
 
@@ -101,6 +101,6 @@ public class DataGenerator {
             rValue = rValue.concat(it.next() + " ");
         }
 
-        return "\"" + rValue.trim() + "\", " + callType;
+        return "\"" + rValue.trim() + "\", " + callType + ", " + labelId;
     }
 }
