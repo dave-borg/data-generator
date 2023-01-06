@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class StartupDataGenerator extends DataGenerator {
 
-    public ArrayList<String> generate(int cycles) {
+    public ArrayList<String> generate(int cycles, String type) {
         ArrayList<String> rValue = new ArrayList<String>();
 
         for (int i = 0; i < cycles; i++)
-            rValue.add(generateCall());
+            rValue.add(generateCall(type));
 
         return rValue;
     }
 
-    private String generateCall() {
+    private String generateCall(String type) {
         ArrayList<String> rValueBits = new ArrayList<>();
         String rValue = "";
 
@@ -78,7 +78,7 @@ public class StartupDataGenerator extends DataGenerator {
                 break;
         }
 
-        return formatForCsv(rValueBits, "REQUEST_STARTUP", LabelConstants.REQUEST_STARTUP);
+        return formatForCsv(rValueBits, "REQUEST_STARTUP", LabelConstants.REQUEST_STARTUP, type);
     }
 
     private String randomLocation() {

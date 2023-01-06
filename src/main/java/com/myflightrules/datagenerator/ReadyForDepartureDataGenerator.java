@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class ReadyForDepartureDataGenerator extends DataGenerator {
 
-    public ArrayList<String> generate(int cycles) {
+    public ArrayList<String> generate(int cycles, String type) {
         ArrayList<String> rValue = new ArrayList<>();
 
         for (int i = 0; i < cycles; i++) {
-            rValue.add(generateCall().trim());
+            rValue.add(generateCall(type).trim());
         }
 
         return rValue;
     }
 
-    private String generateCall() {
+    private String generateCall(String type) {
         ArrayList<String> rValueBits = new ArrayList<>();
         String rValue = "";
 
@@ -80,7 +80,7 @@ public class ReadyForDepartureDataGenerator extends DataGenerator {
 
         }
 
-        return formatForCsv(rValueBits, "READY_FOR_DEPARTURE", LabelConstants.READY_FOR_DEPARTURE);
+        return formatForCsv(rValueBits, "READY_FOR_DEPARTURE", LabelConstants.READY_FOR_DEPARTURE, type);
     }
 
     
@@ -139,69 +139,15 @@ public class ReadyForDepartureDataGenerator extends DataGenerator {
             if (random.nextInt(4 - 1) + 4 == 4)
                 rValue = rValue.concat(" " + randomPhoneticCharacter(1));
 
-            if (random.nextInt(4 - 1) + 4 == 4)
-                rValue = rValue.concat(" runway");
+            // rValue = randomRunway();
 
-            runwayDescriptor.add("zero one");
-            runwayDescriptor.add("zero two");
-            runwayDescriptor.add("zero three");
-            runwayDescriptor.add("zero four");
-            runwayDescriptor.add("zero five");
-            runwayDescriptor.add("zero six");
-            runwayDescriptor.add("zero seven");
-            runwayDescriptor.add("zero eight");
-            runwayDescriptor.add("zero nine");
-            runwayDescriptor.add("zero one");
-            runwayDescriptor.add("zero two");
-            runwayDescriptor.add("zero three");
-            runwayDescriptor.add("zero four");
-            runwayDescriptor.add("zero five");
-            runwayDescriptor.add("zero six");
-            runwayDescriptor.add("zero seven");
-            runwayDescriptor.add("zero eight");
-            runwayDescriptor.add("zero nine");
-            runwayDescriptor.add("one");
-            runwayDescriptor.add("two");
-            runwayDescriptor.add("three");
-            runwayDescriptor.add("four");
-            runwayDescriptor.add("five");
-            runwayDescriptor.add("six");
-            runwayDescriptor.add("seven");
-            runwayDescriptor.add("eight");
-            runwayDescriptor.add("nine");
-            runwayDescriptor.add("one zero");
-            runwayDescriptor.add("one one");
-            runwayDescriptor.add("one two");
-            runwayDescriptor.add("one three");
-            runwayDescriptor.add("one four");
-            runwayDescriptor.add("one five");
-            runwayDescriptor.add("one six");
-            runwayDescriptor.add("one seven");
-            runwayDescriptor.add("one eight");
-            runwayDescriptor.add("one nine");
-            runwayDescriptor.add("two zero");
-            runwayDescriptor.add("two one");
-            runwayDescriptor.add("two two");
-            runwayDescriptor.add("two three");
-            runwayDescriptor.add("two four");
-            runwayDescriptor.add("two five");
-            runwayDescriptor.add("two six");
-            runwayDescriptor.add("two seven");
-            runwayDescriptor.add("two eight");
-            runwayDescriptor.add("two nine");
-            runwayDescriptor.add("three zero");
-            runwayDescriptor.add("three one");
-            runwayDescriptor.add("three two");
-            runwayDescriptor.add("three three");
-            runwayDescriptor.add("three four");
-            runwayDescriptor.add("three five");
-            runwayDescriptor.add("three six");
-
-            rValue = rValue.concat(" " + randomListItem(runwayDescriptor));
+            rValue = rValue.concat(" " + randomRunway());
         }
 
         return rValue;
     }
+
+    
 
     
 

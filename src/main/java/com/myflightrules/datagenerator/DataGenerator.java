@@ -93,7 +93,7 @@ public class DataGenerator {
         return randomListItem(greetings);
     }
 
-    protected String formatForCsv(ArrayList<String> rValueBits, String callType, int labelId) {
+    protected String formatForCsv(ArrayList<String> rValueBits, String callType, int labelId, String type) {
         String rValue = "";
         Iterator it = rValueBits.iterator();
 
@@ -101,6 +101,74 @@ public class DataGenerator {
             rValue = rValue.concat(it.next() + " ");
         }
 
-        return "\"" + rValue.trim() + "\", \"" + callType + "\", " + labelId;
+        return String.format("\"%s\",%s,%o,%s", rValue.trim(), callType, labelId, type);
+    }
+
+    protected String randomRunway() {
+        String rValue = "";
+
+        ArrayList<String> runwayDescriptor = new ArrayList<>();
+        
+        if (random.nextInt(4 - 1) + 4 == 4)
+            rValue = rValue.concat("runway ");
+
+        runwayDescriptor.add("zero one");
+        runwayDescriptor.add("zero two");
+        runwayDescriptor.add("zero three");
+        runwayDescriptor.add("zero four");
+        runwayDescriptor.add("zero five");
+        runwayDescriptor.add("zero six");
+        runwayDescriptor.add("zero seven");
+        runwayDescriptor.add("zero eight");
+        runwayDescriptor.add("zero nine");
+        runwayDescriptor.add("zero one");
+        runwayDescriptor.add("zero two");
+        runwayDescriptor.add("zero three");
+        runwayDescriptor.add("zero four");
+        runwayDescriptor.add("zero five");
+        runwayDescriptor.add("zero six");
+        runwayDescriptor.add("zero seven");
+        runwayDescriptor.add("zero eight");
+        runwayDescriptor.add("zero nine");
+        runwayDescriptor.add("one");
+        runwayDescriptor.add("two");
+        runwayDescriptor.add("three");
+        runwayDescriptor.add("four");
+        runwayDescriptor.add("five");
+        runwayDescriptor.add("six");
+        runwayDescriptor.add("seven");
+        runwayDescriptor.add("eight");
+        runwayDescriptor.add("nine");
+        runwayDescriptor.add("one zero");
+        runwayDescriptor.add("one one");
+        runwayDescriptor.add("one two");
+        runwayDescriptor.add("one three");
+        runwayDescriptor.add("one four");
+        runwayDescriptor.add("one five");
+        runwayDescriptor.add("one six");
+        runwayDescriptor.add("one seven");
+        runwayDescriptor.add("one eight");
+        runwayDescriptor.add("one nine");
+        runwayDescriptor.add("two zero");
+        runwayDescriptor.add("two one");
+        runwayDescriptor.add("two two");
+        runwayDescriptor.add("two three");
+        runwayDescriptor.add("two four");
+        runwayDescriptor.add("two five");
+        runwayDescriptor.add("two six");
+        runwayDescriptor.add("two seven");
+        runwayDescriptor.add("two eight");
+        runwayDescriptor.add("two nine");
+        runwayDescriptor.add("three zero");
+        runwayDescriptor.add("three one");
+        runwayDescriptor.add("three two");
+        runwayDescriptor.add("three three");
+        runwayDescriptor.add("three four");
+        runwayDescriptor.add("three five");
+        runwayDescriptor.add("three six");
+
+        rValue = rValue.concat(" " + randomListItem(runwayDescriptor));
+
+        return rValue;
     }
 }
